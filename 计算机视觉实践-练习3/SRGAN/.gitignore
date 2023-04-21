@@ -1,0 +1,7 @@
+generated/*
+log/*
+*.pyc
+*.png
+*.DS_Store
+*.jpg
+*.pth
