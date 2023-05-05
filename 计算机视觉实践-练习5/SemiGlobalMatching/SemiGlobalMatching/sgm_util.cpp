@@ -3,7 +3,7 @@
 * https://github.com/ethan-li-coding/SemiGlobalMatching
 * Describe	: implement of sgm_util
 */
-
+ 
 #include "stdafx.h"
 #include "sgm_util.h"
 #include <algorithm>

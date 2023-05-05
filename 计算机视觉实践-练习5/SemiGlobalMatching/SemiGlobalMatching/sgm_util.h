@@ -11,108 +11,108 @@
 #define SAFE_DELETE(P) {if(P) delete[](P);(P)=nullptr;}
 #endif
 
-namespace sgm_util
+namespace sgm_util 
 {
-	//¡¤¡¤¡¤¡¤¡¤¡¤ census¹¤¾ß¼¯
-	// census±ä»»
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ censusï¿½ï¿½ï¿½ß¼ï¿½
+	// censusï¿½ä»»
 
 	/**
-	 * \brief census±ä»»
-	 * \param source	ÊäÈë£¬Ó°ÏñÊı¾İ
-	 * \param census	Êä³ö£¬censusÖµÊı×é
-	 * \param width		ÊäÈë£¬Ó°Ïñ¿í
-	 * \param height	ÊäÈë£¬Ó°Ïñ¸ß
+	 * \brief censusï¿½ä»»
+	 * \param source	ï¿½ï¿½ï¿½ë£¬Ó°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * \param census	ï¿½ï¿½ï¿½ï¿½ï¿½censusÖµï¿½ï¿½ï¿½ï¿½
+	 * \param width		ï¿½ï¿½ï¿½ë£¬Ó°ï¿½ï¿½ï¿½
+	 * \param height	ï¿½ï¿½ï¿½ë£¬Ó°ï¿½ï¿½ï¿½
 	 */
 	void census_transform_5x5(const uint8* source, uint32* census, const sint32& width, const sint32& height);
 	void census_transform_9x7(const uint8* source, uint64* census, const sint32& width, const sint32& height);
-	// Hamming¾àÀë
+	// Hammingï¿½ï¿½ï¿½ï¿½
 	uint8 Hamming32(const uint32& x, const uint32& y);
 	uint8 Hamming64(const uint64& x, const uint64& y);
 
 	/**
-	 * \brief ×óÓÒÂ·¾¶¾ÛºÏ ¡ú ¡û
-	 * \param img_data			ÊäÈë£¬Ó°ÏñÊı¾İ
-	 * \param width				ÊäÈë£¬Ó°Ïñ¿í
-	 * \param height			ÊäÈë£¬Ó°Ïñ¸ß
-	 * \param min_disparity		ÊäÈë£¬×îĞ¡ÊÓ²î
-	 * \param max_disparity		ÊäÈë£¬×î´óÊÓ²î
-	 * \param p1				ÊäÈë£¬³Í·£ÏîP1
-	 * \param p2_init			ÊäÈë£¬³Í·£ÏîP2_Init
-	 * \param cost_init			ÊäÈë£¬³õÊ¼´ú¼ÛÊı¾İ
-	 * \param cost_aggr			Êä³ö£¬Â·¾¶¾ÛºÏ´ú¼ÛÊı¾İ
-	 * \param is_forward		ÊäÈë£¬ÊÇ·ñÎªÕı·½Ïò£¨Õı·½ÏòÎª´Ó×óµ½ÓÒ£¬·´·½ÏòÎª´ÓÓÒµ½×ó£©
+	 * \brief ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½Ûºï¿½ ï¿½ï¿½ ï¿½ï¿½
+	 * \param img_data			ï¿½ï¿½ï¿½ë£¬Ó°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * \param width				ï¿½ï¿½ï¿½ë£¬Ó°ï¿½ï¿½ï¿½
+	 * \param height			ï¿½ï¿½ï¿½ë£¬Ó°ï¿½ï¿½ï¿½
+	 * \param min_disparity		ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½Ğ¡ï¿½Ó²ï¿½
+	 * \param max_disparity		ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½Ó²ï¿½
+	 * \param p1				ï¿½ï¿½ï¿½ë£¬ï¿½Í·ï¿½ï¿½ï¿½P1
+	 * \param p2_init			ï¿½ï¿½ï¿½ë£¬ï¿½Í·ï¿½ï¿½ï¿½P2_Init
+	 * \param cost_init			ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * \param cost_aggr			ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ÛºÏ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * \param is_forward		ï¿½ï¿½ï¿½ë£¬ï¿½Ç·ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Ò£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½
 	 */
 	void CostAggregateLeftRight(const uint8* img_data, const sint32& width, const sint32& height, const sint32& min_disparity, const sint32& max_disparity,
 		const sint32& p1,const sint32& p2_init, const uint8* cost_init, uint8* cost_aggr, bool is_forward = true);
 
 	/**
-	 * \brief ÉÏÏÂÂ·¾¶¾ÛºÏ ¡ı ¡ü
-	 * \param img_data			ÊäÈë£¬Ó°ÏñÊı¾İ
-	 * \param width				ÊäÈë£¬Ó°Ïñ¿í
-	 * \param height			ÊäÈë£¬Ó°Ïñ¸ß
-	 * \param min_disparity		ÊäÈë£¬×îĞ¡ÊÓ²î
-	 * \param max_disparity		ÊäÈë£¬×î´óÊÓ²î
-	 * \param p1				ÊäÈë£¬³Í·£ÏîP1
-	 * \param p2_init			ÊäÈë£¬³Í·£ÏîP2_Init
-	 * \param cost_init			ÊäÈë£¬³õÊ¼´ú¼ÛÊı¾İ
-	 * \param cost_aggr			Êä³ö£¬Â·¾¶¾ÛºÏ´ú¼ÛÊı¾İ
-	 * \param is_forward		ÊäÈë£¬ÊÇ·ñÎªÕı·½Ïò£¨Õı·½ÏòÎª´ÓÉÏµ½ÏÂ£¬·´·½ÏòÎª´ÓÏÂµ½ÉÏ£©
+	 * \brief ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½Ûºï¿½ ï¿½ï¿½ ï¿½ï¿½
+	 * \param img_data			ï¿½ï¿½ï¿½ë£¬Ó°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * \param width				ï¿½ï¿½ï¿½ë£¬Ó°ï¿½ï¿½ï¿½
+	 * \param height			ï¿½ï¿½ï¿½ë£¬Ó°ï¿½ï¿½ï¿½
+	 * \param min_disparity		ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½Ğ¡ï¿½Ó²ï¿½
+	 * \param max_disparity		ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½Ó²ï¿½
+	 * \param p1				ï¿½ï¿½ï¿½ë£¬ï¿½Í·ï¿½ï¿½ï¿½P1
+	 * \param p2_init			ï¿½ï¿½ï¿½ë£¬ï¿½Í·ï¿½ï¿½ï¿½P2_Init
+	 * \param cost_init			ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * \param cost_aggr			ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ÛºÏ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * \param is_forward		ï¿½ï¿½ï¿½ë£¬ï¿½Ç·ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½Ïµï¿½ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½Âµï¿½ï¿½Ï£ï¿½
 	 */
 	void CostAggregateUpDown(const uint8* img_data, const sint32& width, const sint32& height, const sint32& min_disparity, const sint32& max_disparity,
 		const sint32& p1, const sint32& p2_init, const uint8* cost_init, uint8* cost_aggr, bool is_forward = true);
 
 	/**
-	 * \brief ¶Ô½ÇÏß1Â·¾¶¾ÛºÏ£¨×óÉÏ<->ÓÒÏÂ£©¨K ¨I
-	 * \param img_data			ÊäÈë£¬Ó°ÏñÊı¾İ
-	 * \param width				ÊäÈë£¬Ó°Ïñ¿í
-	 * \param height			ÊäÈë£¬Ó°Ïñ¸ß
-	 * \param min_disparity		ÊäÈë£¬×îĞ¡ÊÓ²î
-	 * \param max_disparity		ÊäÈë£¬×î´óÊÓ²î
-	 * \param p1				ÊäÈë£¬³Í·£ÏîP1
-	 * \param p2_init			ÊäÈë£¬³Í·£ÏîP2_Init
-	 * \param cost_init			ÊäÈë£¬³õÊ¼´ú¼ÛÊı¾İ
-	 * \param cost_aggr			Êä³ö£¬Â·¾¶¾ÛºÏ´ú¼ÛÊı¾İ
-	 * \param is_forward		ÊäÈë£¬ÊÇ·ñÎªÕı·½Ïò£¨Õı·½ÏòÎª´Ó×óÉÏµ½ÓÒÏÂ£¬·´·½ÏòÎª´ÓÓÒÏÂµ½×óÉÏ£©
+	 * \brief ï¿½Ô½ï¿½ï¿½ï¿½1Â·ï¿½ï¿½ï¿½ÛºÏ£ï¿½ï¿½ï¿½ï¿½ï¿½<->ï¿½ï¿½ï¿½Â£ï¿½ï¿½K ï¿½I
+	 * \param img_data			ï¿½ï¿½ï¿½ë£¬Ó°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * \param width				ï¿½ï¿½ï¿½ë£¬Ó°ï¿½ï¿½ï¿½
+	 * \param height			ï¿½ï¿½ï¿½ë£¬Ó°ï¿½ï¿½ï¿½
+	 * \param min_disparity		ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½Ğ¡ï¿½Ó²ï¿½
+	 * \param max_disparity		ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½Ó²ï¿½
+	 * \param p1				ï¿½ï¿½ï¿½ë£¬ï¿½Í·ï¿½ï¿½ï¿½P1
+	 * \param p2_init			ï¿½ï¿½ï¿½ë£¬ï¿½Í·ï¿½ï¿½ï¿½P2_Init
+	 * \param cost_init			ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * \param cost_aggr			ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ÛºÏ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * \param is_forward		ï¿½ï¿½ï¿½ë£¬ï¿½Ç·ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½Ï£ï¿½
 	 */
 	void CostAggregateDagonal_1(const uint8* img_data, const sint32& width, const sint32& height, const sint32& min_disparity, const sint32& max_disparity,
 		const sint32& p1, const sint32& p2_init, const uint8* cost_init, uint8* cost_aggr, bool is_forward = true);
 
 	/**
-	 * \brief ¶Ô½ÇÏß2Â·¾¶¾ÛºÏ£¨ÓÒÉÏ<->×óÏÂ£©¨L ¨J
-	 * \param img_data			ÊäÈë£¬Ó°ÏñÊı¾İ
-	 * \param width				ÊäÈë£¬Ó°Ïñ¿í
-	 * \param height			ÊäÈë£¬Ó°Ïñ¸ß
-	 * \param min_disparity		ÊäÈë£¬×îĞ¡ÊÓ²î
-	 * \param max_disparity		ÊäÈë£¬×î´óÊÓ²î
-	 * \param p1				ÊäÈë£¬³Í·£ÏîP1
-	 * \param p2_init			ÊäÈë£¬³Í·£ÏîP2_Init
-	 * \param cost_init			ÊäÈë£¬³õÊ¼´ú¼ÛÊı¾İ
-	 * \param cost_aggr			Êä³ö£¬Â·¾¶¾ÛºÏ´ú¼ÛÊı¾İ
-	 * \param is_forward		ÊäÈë£¬ÊÇ·ñÎªÕı·½Ïò£¨Õı·½ÏòÎª´ÓÉÏµ½ÏÂ£¬·´·½ÏòÎª´ÓÏÂµ½ÉÏ£©
+	 * \brief ï¿½Ô½ï¿½ï¿½ï¿½2Â·ï¿½ï¿½ï¿½ÛºÏ£ï¿½ï¿½ï¿½ï¿½ï¿½<->ï¿½ï¿½ï¿½Â£ï¿½ï¿½L ï¿½J
+	 * \param img_data			ï¿½ï¿½ï¿½ë£¬Ó°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * \param width				ï¿½ï¿½ï¿½ë£¬Ó°ï¿½ï¿½ï¿½
+	 * \param height			ï¿½ï¿½ï¿½ë£¬Ó°ï¿½ï¿½ï¿½
+	 * \param min_disparity		ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½Ğ¡ï¿½Ó²ï¿½
+	 * \param max_disparity		ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½Ó²ï¿½
+	 * \param p1				ï¿½ï¿½ï¿½ë£¬ï¿½Í·ï¿½ï¿½ï¿½P1
+	 * \param p2_init			ï¿½ï¿½ï¿½ë£¬ï¿½Í·ï¿½ï¿½ï¿½P2_Init
+	 * \param cost_init			ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * \param cost_aggr			ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ÛºÏ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * \param is_forward		ï¿½ï¿½ï¿½ë£¬ï¿½Ç·ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½Ïµï¿½ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½Âµï¿½ï¿½Ï£ï¿½
 	 */
 	void CostAggregateDagonal_2(const uint8* img_data, const sint32& width, const sint32& height, const sint32& min_disparity, const sint32& max_disparity,
 		const sint32& p1, const sint32& p2_init, const uint8* cost_init, uint8* cost_aggr, bool is_forward = true);
 
 	
 	/**
-	 * \brief ÖĞÖµÂË²¨
-	 * \param in				ÊäÈë£¬Ô´Êı¾İ 
-	 * \param out				Êä³ö£¬Ä¿±êÊı¾İ
-	 * \param width				ÊäÈë£¬¿í¶È
-	 * \param height			ÊäÈë£¬¸ß¶È
-	 * \param wnd_size			ÊäÈë£¬´°¿Ú¿í¶È
+	 * \brief ï¿½ï¿½Öµï¿½Ë²ï¿½
+	 * \param in				ï¿½ï¿½ï¿½ë£¬Ô´ï¿½ï¿½ï¿½ï¿½ 
+	 * \param out				ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * \param width				ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½
+	 * \param height			ï¿½ï¿½ï¿½ë£¬ï¿½ß¶ï¿½
+	 * \param wnd_size			ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½
 	 */
 	void MedianFilter(const float32* in, float32* out, const sint32& width, const sint32& height, const sint32 wnd_size);
 
 
 	/**
-	 * \brief ÌŞ³ıĞ¡Á¬Í¨Çø
-	 * \param disparity_map		ÊäÈë£¬ÊÓ²îÍ¼ 
-	 * \param width				ÊäÈë£¬¿í¶È
-	 * \param height			ÊäÈë£¬¸ß¶È
-	 * \param diff_insame		ÊäÈë£¬Í¬Ò»Á¬Í¨ÇøÄÚµÄ¾Ö²¿ÏñËØ²îÒì
-	 * \param min_speckle_aera	ÊäÈë£¬×îĞ¡Á¬Í¨ÇøÃæ»ı
-	 * \param invalid_val		ÊäÈë£¬ÎŞĞ§Öµ
+	 * \brief ï¿½Ş³ï¿½Ğ¡ï¿½ï¿½Í¨ï¿½ï¿½
+	 * \param disparity_map		ï¿½ï¿½ï¿½ë£¬ï¿½Ó²ï¿½Í¼ 
+	 * \param width				ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½
+	 * \param height			ï¿½ï¿½ï¿½ë£¬ï¿½ß¶ï¿½
+	 * \param diff_insame		ï¿½ï¿½ï¿½ë£¬Í¬Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ÚµÄ¾Ö²ï¿½ï¿½ï¿½ï¿½Ø²ï¿½ï¿½ï¿½
+	 * \param min_speckle_aera	ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½Ğ¡ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * \param invalid_val		ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½Ğ§Öµ
 	 */
 	void RemoveSpeckles(float32* disparity_map, const sint32& width, const sint32& height, const sint32& diff_insame,const uint32& min_speckle_aera, const float32& invalid_val);
 }

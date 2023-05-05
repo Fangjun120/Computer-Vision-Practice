@@ -9,17 +9,17 @@
 #include <cstdint>
 #include <limits>
 
-/** \brief floatÎÞÐ§Öµ */
+/** \brief floatï¿½ï¿½Ð§Öµ */
 constexpr auto Invalid_Float = std::numeric_limits<float>::infinity();
 
-/** \brief »ù´¡ÀàÐÍ±ðÃû */
-typedef int8_t			sint8;		// ÓÐ·ûºÅ8Î»ÕûÊý
-typedef uint8_t			uint8;		// ÎÞ·ûºÅ8Î»ÕûÊý
-typedef int16_t			sint16;		// ÓÐ·ûºÅ16Î»ÕûÊý
-typedef uint16_t		uint16;		// ÎÞ·ûºÅ16Î»ÕûÊý
-typedef int32_t			sint32;		// ÓÐ·ûºÅ32Î»ÕûÊý
-typedef uint32_t		uint32;		// ÎÞ·ûºÅ32Î»ÕûÊý
-typedef int64_t			sint64;		// ÓÐ·ûºÅ64Î»ÕûÊý
-typedef uint64_t		uint64;		// ÎÞ·ûºÅ64Î»ÕûÊý
-typedef float			float32;	// µ¥¾«¶È¸¡µã
-typedef double			float64;	// Ë«¾«¶È¸¡µã
+/** \brief ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í±ï¿½ï¿½ï¿½ */
+typedef int8_t			sint8;		// ï¿½Ð·ï¿½ï¿½ï¿½8Î»ï¿½ï¿½ï¿½ï¿½
+typedef uint8_t			uint8;		// ï¿½Þ·ï¿½ï¿½ï¿½8Î»ï¿½ï¿½ï¿½ï¿½ 
+typedef int16_t			sint16;		// ï¿½Ð·ï¿½ï¿½ï¿½16Î»ï¿½ï¿½ï¿½ï¿½
+typedef uint16_t		uint16;		// ï¿½Þ·ï¿½ï¿½ï¿½16Î»ï¿½ï¿½ï¿½ï¿½
+typedef int32_t			sint32;		// ï¿½Ð·ï¿½ï¿½ï¿½32Î»ï¿½ï¿½ï¿½ï¿½
+typedef uint32_t		uint32;		// ï¿½Þ·ï¿½ï¿½ï¿½32Î»ï¿½ï¿½ï¿½ï¿½
+typedef int64_t			sint64;		// ï¿½Ð·ï¿½ï¿½ï¿½64Î»ï¿½ï¿½ï¿½ï¿½
+typedef uint64_t		uint64;		// ï¿½Þ·ï¿½ï¿½ï¿½64Î»ï¿½ï¿½ï¿½ï¿½
+typedef float			float32;	// ï¿½ï¿½ï¿½ï¿½ï¿½È¸ï¿½ï¿½ï¿½
+typedef double			float64;	// Ë«ï¿½ï¿½ï¿½È¸ï¿½ï¿½ï¿½

@@ -7,7 +7,7 @@
 #include "SemiGlobalMatching.h"
 #include <chrono>
 using namespace std::chrono;
-
+ 
 // opencv library
 #include <opencv2/opencv.hpp>
 #ifdef _DEBUG
